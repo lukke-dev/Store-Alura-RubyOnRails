@@ -1,0 +1,9 @@
+<div class="container text-center">
+  <p id="notice"><%= notice %></p>
+  <h2 class="text-secondary mt-0 mb-3">
+    Departamento:
+    <%= @departamento.nome %>
+  </h2>
+  <%= render 'produtos/produto', obj: @produtos %>
+  <%= link_to 'Back', departamentos_path, class: "badge bg-light text-dark  text-decoration-none" %>
+</div>

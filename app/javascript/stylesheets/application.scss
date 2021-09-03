@@ -2,5 +2,13 @@
 
 #page-content {
   flex: 1 0 auto;
+}
+
+#body-nav {
+  padding-top: 4.5rem;
   background-color: lightgray;
+}
+
+a:hover {
+  opacity: 0.5;
 }

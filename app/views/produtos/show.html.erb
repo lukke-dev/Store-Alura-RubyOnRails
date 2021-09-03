@@ -1,0 +1,7 @@
+<h2 class="text-secondary text-center mb-3">Resultados da Pesquisa: <%= params[:nome] %></h2>
+<div class="container w-50">
+  <%= render 'produto', obj: @nome %>
+  <% if @nome.empty? %>
+    <h4 class="text-center text-secondary">Nenhum produto com este nome encontrado</h4>
+  <% end %>
+</div>

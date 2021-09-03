@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title>StoreAlura</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,9 +9,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="d-flex flex-column h-100" id="body-nav">
+  <body class="d-flex flex-column h-100" id="body-nav" >
     <%= render 'layouts/navigation' %>
-    <main class="flex-shrink-0 py-3" id="page-content" >
+    <main class="flex-shrink-0 my-0 py-0" id="page-content" >
       <%= render 'layouts/messages'%>
       <%= yield %>
     </main>

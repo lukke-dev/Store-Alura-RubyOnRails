@@ -1,0 +1,26 @@
+  <%= render 'shared/errors', obj: @produto %>
+<%= form_with(model: @produto, class: "w-50", local: true) do |form|%>
+  <div class="form-group">
+    <%= form.label :nome, class: "form-label my-0 py-0" %><br />
+    <%= form.text_field :nome, class: "form-control my-0 py-0" %><br />
+  </div>
+  <div class="form-group">
+    <%= form.label :departamento, class: "form-label my-0 py-0" %><br />
+    <%= form.collection_select :departamento_id, @dep, :id, :nome, {}, class: "form-control my-0 py-0" %><br />
+  </div>
+  <div class="form-group">
+    <%= form.label :cor, class: "form-label my-0 py-0" %><br />
+    <%= form.text_field :cor, class: "form-control my-0 py-0" %><br />
+  </div>
+  <div class="form-group">
+    <%= form.label :preco, "Preço", class: "form-label my-0 py-0" %><br />
+    <%= form.number_field :preco , step: 0.01, class: "form-control my-0 py-0"%><br />
+  </div>
+  <div class="form-group ">
+    <%= form.label :quantidade, class: "form-label my-0 py-0" %><br />
+    <%= form.number_field :quantidade, class: "form-control my-0 py-0" %><br />
+  </div>
+  <div class="text-center">
+    <%= form.submit  class: "mt-1 btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<h1 class=" text-center text-secondary">Departamentos</h1>
+<div class="container w-50">
+  <table class="table table-bordered table-hover mt-1">
+    <thead>
+      <tr class="text-center">
+        <th>Nome</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @departamentos.each do |departamento| %>
+        <tr class="text-center">
+          <td><%= departamento.nome %></td>
+          <td><%= link_to 'Ver produtos', departamento, class: "btn btn-secondary" %></td>
+          <td><%= link_to 'Editar', edit_departamento_path(departamento), class: "btn btn-secondary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= link_to 'Novo Departamento', new_departamento_path, class: "btn btn-outline-primary " %>
+  </div>
+</div>
+<br>

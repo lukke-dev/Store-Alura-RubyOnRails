@@ -1,0 +1,25 @@
+<table class="table table-bordered table-hover mt-1">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Cor</th>
+      <th>Quantidade</th>
+      <th>Departamento</th>
+      <th colspan="2">
+      </tr>
+    </thead>
+    <tbody>
+      <% obj.each do |prod| %>
+        <tr class="text-center">
+          <td><%= prod.nome %></td>
+          <td><%= prod.preco.round(2) %></td>
+          <td><%= prod.cor %></td>
+          <td><%= prod.quantidade %></td>
+          <td><%= prod.departamento.nome %></td>
+          <td> <%= link_to "Editar", edit_produto_path(prod), class: "btn btn-outline-primary" %> </td>
+          <td> <%= button_to "Deletar", prod, method: :delete, class: "btn btn-outline-danger", data: {confirm: "tem certeza que deseja remover o produto: #{prod.nome}"} %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

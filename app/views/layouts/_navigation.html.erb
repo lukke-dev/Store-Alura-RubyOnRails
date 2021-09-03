@@ -1,13 +1,14 @@
-<nav class="navbar navbar-light bg-dark">
+<nav class="navbar navbar-light fixed-top bg-white">
   <div class="d-flex justify-content-between w-100 mx-5 my-1">
     <div>
-      <%= link_to "Loja", root_path, class: "px-5 navbar-brand mx-auto text-info" %>
-      <%= link_to "Criar Produto", new_produto_path, class: "navbar-brand mx-auto text-info" %>
+      <%= link_to "Loja", root_path, class: "px-3 navbar-brand mx-auto text-info" %> <span class="me-3 text-secondary">|</span>
+      <%= link_to "Criar produto", new_produto_path, class: "pe-3 navbar-brand mx-auto text-info" %><span class="me-3 text-secondary">|</span>
+      <%= link_to "Departamentos", departamentos_path, class: "navbar-brand mx-auto text-info" %>
     </div>
     <div>
-      <%= form_tag busca_produtos_path, class: "d-flex " do  %>
-        <%= text_field_tag :nome, nil, class: "form-control h-75 my-auto mx-2"  %>
-        <%= button_to "Buscar", nil, class: "btn btn-outline-info my-auto btn-sm" %>
+      <%= form_with url: busca_produtos_path, class: "d-flex", method: :get do |form| %>
+        <%= form.text_field :nome, class: "form-control h-75 mx-2", placeholder: "Buscar Produtos" %>
+        <%= form.submit "Buscar", class: "btn btn-outline-info my-auto btn-sm" %>
       <% end %>
     </div>
   </div>

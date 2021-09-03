@@ -1,0 +1,19 @@
+<%= form_with(model: departamento) do |form| %>
+  <% if departamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(departamento.errors.count, "error") %> prohibited this departamento from being saved:</h2>
+      <ul>
+        <% departamento.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group text-center mb-3">
+    <%= form.label :nome, class: "form-label my-0 py-0 text-dark"  %>
+    <%= form.text_field :nome, class: "form-control  my-0 py-0" %>
+  </div>
+  <div class="text-center">
+    <%= form.submit  class: "mt-1 btn btn-primary"%>
+  </div>
+<% end %>

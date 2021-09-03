@@ -23,14 +23,11 @@ class DepartamentosController < ApplicationController
   def create
     @departamento = Departamento.new(departamento_params)
 
-    respond_to do |format|
-      if @departamento.save
-        format.html { redirect_to @departamento, notice: 'Departamento criado com sucesso.' }
-        format.json { render :show, status: :created, location: @departamento }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @departamento.errors, status: :unprocessable_entity }
-      end
+    if @departamento.save
+      flash[:notice] = 'Departamento criado com sucesso.'
+      redirect_to departamentos_path
+    else
+      render 'new'
     end
   end
 

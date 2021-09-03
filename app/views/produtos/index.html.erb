@@ -1,0 +1,50 @@
+<div class="container w-50">
+  <h2 class="text-secondary text-center mt-3">Produtos</h2>
+  <table class="table table-bordered table-hover mt-1">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Cor</th>
+        <th>Quantidade</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @produtos.each do |prod| %>
+        <tr class="text-center">
+          <td><%= prod.nome %></td>
+          <td><%= prod.preco %></td>
+          <td><%= prod.cor %></td>
+          <td><%= prod.quantidade %></td>
+          <td> <%= button_to "Deletar", prod, method: :delete, class: "btn btn-outline-danger", data: {confirm: "tem certeza que deseja remover o produto: #{prod.nome}"} %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="container w-50">
+  <div class="alert alert-success " role="alert">
+    <h2 class="text-dark text-center">Produtos com Desconto</h2>
+  </div>
+  <table class="table table-bordered table-hover mt-1">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Cor</th>
+        <th>Quantidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @prod_desc.each do |prod| %>
+        <tr>
+          <td><%= prod.nome %></td>
+          <td><%= prod.preco %></td>
+          <td><%= prod.cor %></td>
+          <td><%= prod.quantidade %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

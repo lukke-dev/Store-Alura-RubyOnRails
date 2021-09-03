@@ -1,0 +1,24 @@
+<div class="container w-50">
+  <table class="table table-bordered table-hover mt-5">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Cor</th>
+        <th>Quantidade</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @nome.each do |search| %>
+        <tr class="text-center">
+          <td><%= search.nome %></td>
+          <td><%= search.preco %></td>
+          <td><%= search.cor %></td>
+          <td><%= search.quantidade %></td>
+          <td> <%= button_to "Deletar", search, method: :delete, class: "btn btn-outline-danger", data: {confirm: "tem certeza que deseja remover o produto: #{search.nome}"} %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

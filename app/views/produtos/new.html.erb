@@ -1,0 +1,15 @@
+<div class="container d-flex justify-content-center mt-5">
+  <%= form_for Produto.new do |form| %>
+    <h2 class="text-secondary my-3">Criar Produto</h2>
+    <hr>
+    <%= form.label :nome, class: "form-label" %><br />
+    <%= form.text_field :nome, class: "form-control" %><br />
+    <%= form.label :cor, class: "form-label" %><br />
+    <%= form.text_field :cor, class: "form-control" %><br />
+    <%= form.label :preco, "Preço", class: "form-label" %><br />
+    <%= form.number_field :preco , step: 0.01, class: "form-control"%><br />
+    <%= form.label :quantidade, class: "form-label" %><br />
+    <%= form.number_field :quantidade, class: "form-control" %><br />
+    <%= form.submit "Criar Produto", class: "mt-3 btn btn-primary" %>
+  <% end %>
+</div>

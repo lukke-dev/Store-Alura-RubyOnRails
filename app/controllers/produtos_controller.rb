@@ -4,11 +4,18 @@ class ProdutosController < ApplicationController
     @prod_desc = Produto.order(:preco).limit(1)
   end
 
-  def new; end
+  def new
+    @produto = Produto.new
+  end
 
   def create
-    Produto.create(produto_params)
-    redirect_to root_path
+    @produto = Produto.new(produto_params)
+    if @produto.save
+      flash[:notice] = 'Produto criado com sucesso'
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def destroy

@@ -14,7 +14,7 @@
       <% @produtos.each do |prod| %>
         <tr class="text-center">
           <td><%= prod.nome %></td>
-          <td><%= prod.preco %></td>
+          <td><%= prod.preco.round(2) %></td>
           <td><%= prod.cor %></td>
           <td><%= prod.quantidade %></td>
           <td> <%= button_to "Deletar", prod, method: :delete, class: "btn btn-outline-danger", data: {confirm: "tem certeza que deseja remover o produto: #{prod.nome}"} %> </td>
